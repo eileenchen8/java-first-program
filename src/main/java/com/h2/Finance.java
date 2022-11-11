@@ -1,14 +1,18 @@
 package com.h2;
 
+import com.h2.BestLoanRates;
+import com.h2.MortgageCalculator;
+import com.h2.SavingsCalculator;
+
 import java.util.Arrays;
 import java.util.Map;
 
 public class Finance {
-    public final static String BEST_LOAN_RATES = "bestLoanRates";
-    public final static String SAVINGS_CALCULATOR = "savingsCalculator";
-    public final static String MORTGAGE_CALCULATOR = "mortgageCalculator";
+    public static final String BEST_LOAN_RATES = "bestLoanRates";
+    public static final String SAVINGS_CALCULATOR = "savingsCalculator";
+    public static final String MORTGAGE_CALCULATOR = "mortgageCalculator";
 
-    public final static Map<String, String> commandsToUsage = Map.of(
+    public static final Map<String, String> commandsToUsage = Map.of(
             BEST_LOAN_RATES, "usage: bestLoanRates",
             SAVINGS_CALCULATOR, "usage: savingsCalculator <credits separated by ','> <debits separated by ','>",
             MORTGAGE_CALCULATOR, "usage: mortgageCalculator <loanAmount> <termInYears> <annualRate>"
@@ -25,6 +29,7 @@ public class Finance {
         }
         return false;
     }
+
     private static void executeCommand(String command, String[] arguments) {
         switch (command) {
             case BEST_LOAN_RATES:
